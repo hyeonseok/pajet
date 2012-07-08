@@ -38,6 +38,7 @@
 				{
 					returnValue.push("<h3>이미지 맵의 사용</h3>");
 					var mapValue = imgEl[i].getAttribute("usemap").replace("#",'');
+					var areaAlt;
 					returnValue.push("<p>");
 					for(var l=0;l<mapElCount;++l)
 					{
@@ -46,7 +47,13 @@
 							areaEl = mapEl[l].getElementsByTagName("area");
 							for(var m=0;m<areaEl.length;++m)
 							{
-								returnValue.push(areaEl[m].getAttribute("alt")+", ");
+								areaAlt = areaEl[m].getAttribute("alt");
+								if (areaAlt) {
+									returnValue.push(areaAlt);
+								} else {
+									returnValue.push('no alt attribute');
+								}
+								returnValue.push(", ");
 							}
 						}
 					}
