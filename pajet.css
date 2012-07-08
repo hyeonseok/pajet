@@ -112,7 +112,14 @@
     border-bottom: 1px dotted #AFAFAF
 }
 #pajetWrap .section fieldset {
-    padding: 4px 0
+    padding: 4px 0;
+    background-color: #ee0;
+}
+#pajetWrap .section .checked {
+    opacity: 0.3;
+    filter: alpha(opacity = 30);
+    background-color: transparent;
+    zoom: 1;
 }
 #pajetWrap .section fieldset label {
     padding: 0 10px
@@ -170,11 +177,6 @@
     border: 1px solid #9F7F00;
     padding: 4px 0;
     background-color: #E5D2C0;
-}
-#pajetWrap .checked {
-    opacity: 0.3;
-    filter: alpha(opacity = 30);
-    zoom: 1;
 }
 #pajetWrap .closeWacs {
     float: right;
