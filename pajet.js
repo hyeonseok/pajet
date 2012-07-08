@@ -226,7 +226,7 @@
 		{
 			titleElLsit.push('<p class="fail">페이지 타이틀이 정의 되지 않았습니다.</p>');
 		}
-		titleElLsit.push(generateRadioBtn('[pagetitle]', 0, 'pagetitle'));
+		titleElLsit.push(generateRadioBtn('pagetitle', 0, 'pagetitle'));
 		return titleElLsit.join('');
 	}
 	
