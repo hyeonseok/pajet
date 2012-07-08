@@ -17,7 +17,7 @@ foreach ($eval_data as $row) {
 //print_r($result);
 
 foreach ($result as $url => $types) {
-	echo("\n" . $url . "\n");
+	echo($url . "\n");
 	foreach ($types as $type => $item) {
 		if ($type != 'inputimg') {
 			$c = 0;
@@ -37,9 +37,10 @@ foreach ($result as $url => $types) {
 			$total[$type]['fail'] += $f;
 		}
 	}
+	echo("\n");
 }
 
-echo("\nTOTAL\n");
+echo("TOTAL\n");
 foreach ($total as $key => $v) {
 	echo($key . ": " . $v['pass'] . '/' . ($v['pass'] + $v['fail']) . ' (' . round($v['pass'] / ($v['pass'] + $v['fail']) * 1000) / 10 . '%)' . "\n");
 }
