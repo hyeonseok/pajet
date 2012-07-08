@@ -98,11 +98,13 @@
 	}
 	function checkBackgroundImg()
 	{
-		var returnValue = "<h2>1. 적절한 대체 텍스트 제공(배경사용여부)</h2>";
-		returnValue += "<p><button onclick='toggleImageOutline()'>Toggle image outline</button></p>";
-		returnValue += "<p><button onclick='togglebgimage()'>Turn on.off background Image</button></p>";
+		var returnValue = [];
+		returnValue.push("<h2>1. 적절한 대체 텍스트 제공(배경사용여부)</h2>");
+		returnValue.push("<p><button onclick='toggleImageOutline()'>Toggle image outline</button></p>");
+		returnValue.push("<p><button onclick='togglebgimage()'>Turn on.off background Image</button></p>");
 		// TODO: 갯수를 수동으로 입력할 수 있게...
-		return returnValue;
+		returnValue.push(generateRadioBtn('backgroundimage', 0, 'backgroundimage'));
+		return returnValue.join("");
 	}
 	var isImageOutlineToggled;
 	window.toggleImageOutline = function () {
@@ -150,7 +152,7 @@
 	}
 	
 	//movie list
-	function getMovieList() {
+	/*function getMovieList() {
 		var template = [];
 		var objectEl = document.getElementsByTagName('object');
 		var embedEl = document.getElementsByTagName('embed');
@@ -162,7 +164,7 @@
 		template.push(generateRadioBtn('movie', 0, 'skipnav'));
 
 		return template.join('');
-	}	
+	}*/	
 
 	//get #link
 	function getSkipNav() {
@@ -572,7 +574,7 @@
 
 		gHTML.push('<div id="section1" class="section">'+getImgTagList()+'</div>');	//1.1.1
 		gHTML.push('<div id="section2" class="section">'+checkBackgroundImg()+'</div>');	//1.1.1
-		gHTML.push('<div id="section13" class="section">'+getMovieList()+'</div>');	//2
+		//gHTML.push('<div id="section13" class="section">'+getMovieList()+'</div>');	//2
 		gHTML.push('<div id="section3" class="section">'+getSkipNav()+'</div>');	//241
 		gHTML.push('<div id="section4" class="section">'+getTitle()+'</div>'); //242
 		gHTML.push('<div id="section5" class="section">'+getFrameTagList()+'</div>'); //242
