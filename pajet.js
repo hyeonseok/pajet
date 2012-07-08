@@ -1,8 +1,6 @@
 (function () {
 	//console.log('pajet runs');
 	var allElForWas = document.getElementsByTagName("*");
-	var NgbUserEvent = new __NgbUserEvent();
-	var NgbBrowser = new __NgbBrowser();
 	function getObjectList()
 	{
 		var objectEl = document.getElementsByTagName("object");
@@ -694,52 +692,6 @@
 	}
 
 	//util
-	function __NgbUserEvent()
-	{
-	        this.MousePositionX = function(vent)
-	        {
-	                var LeftValue;
-	                if ( window.pageYOffset ) { LeftValue = window.pageXOffset; }
-	                else if ( document.documentElement && document.documentElement.scrollTop ) { LeftValue = document.documentElement.scrollLeft; }
-	                else if ( document.body ) { LeftValue = document.body.scrollLeft; }
-	
-	                if(NgbBrowser.msie()) { return LeftValue + event.clientX; }
-	                else { return evnt.pageX; }
-	        };
-	        this.MousePositionY = function(evnt)
-	        {
-	                var TopValue;
-	                if ( window.pageYOffset ) { TopValue = window.pageYOffset;      }
-	                else if ( document.documentElement && document.documentElement.scrollTop ) { TopValue = document.documentElement.scrollTop; }
-	                else if ( document.body ) { TopValue = document.body.scrollTop; }
-	
-	                if(NgbBrowser.msie()) { return TopValue + event.clientY; }
-	                else { return evnt.pageY;}
-	        };
-	}
-	function __NgbBrowser()
-	{
-	        this.agt = navigator.userAgent.toLowerCase();
-	        this.check = function(browserName) { return this.agt.indexOf(browserName) != -1 };
-	        this.msie = function() { return this.check("msie") };
-	        this.msie5 = function() { return this.check("msie 5") };
-	        this.msie55 = function() { return this.check("msie 5.5") };
-	        this.msie6 = function() { return this.check("msie 6") };
-	        this.msie7 = function() { return this.check("msie 7") };
-	        this.firefox = function() { return this.check("firefox") };
-	        this.netscape = function() { return this.check("netscape") };
-	        this.safari = function() { return this.check("safari") };
-	        this.opera = function() { return this.check("opera") };
-	        this.gecko = function() { return this.check("gecko") };
-	        this.khtml = function() { return this.check("khtml") };
-	        this.windows = function() { return this.check("windows") };
-	        this.windows2000 = function() { return this.check("windows nt 5.0") };
-	        this.windowsXP = function() { return this.check("windows nt 5.1") };
-	        this.windows98 = function() { return this.check("windows 98") };
-	        this.mac = function() { return this.check("mac") };
-	        this.linux = function() { return this.check("linux") };
-	}
-	
 	function getStyle(el, sStyle) {
 		if (el.currentStyle) {
 			getStyle = function(el, sStyle) {
