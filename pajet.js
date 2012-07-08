@@ -726,32 +726,34 @@
 		return false;
 	}
 
-	function loadScript(scriptURL) {
+	function loadScript(scriptURL, callback) {
 		var scriptElem = document.createElement('SCRIPT');
 		scriptElem.setAttribute('type', 'text/javaScript');
 		scriptElem.setAttribute('src', scriptURL);
+		scriptElem.onload = callback;
 		document.body.appendChild(scriptElem);
 	}
 
-	//실행
-	loadScript(getScriptPath() + 'image.php?url=' + window.location.href);	// 처음에 pajet을 화면에 출력할 때는 서버의 데이터를 못 불러옴. pajet.js를 php로 가고 서버 데이터를 연동해야 하나...
-
-	if(document.getElementById("deuteWas") != null) {
-		setTemplate(document.getElementById("deuteWas"));
-	} else {
-		var addStyle = document.createElement('link');
-		addStyle.rel = 'stylesheet';
-		addStyle.type = 'text/css';
-		addStyle.href = getScriptPath() + 'pajet.css?' + Math.random();
-		document.getElementsByTagName("head")[0].appendChild(addStyle);
-		
-		var newDiv = document.createElement("div");
-		newDiv.setAttribute("id","deuteWas");
-		if(document.getElementsByTagName("body")[0]){
-			document.getElementsByTagName("body")[0].appendChild(newDiv);
+	function init() {
+		if(document.getElementById("deuteWas") != null) {
+			setTemplate(document.getElementById("deuteWas"));
 		} else {
-			alert("이 페이지에는 body가 없습니다. 혹시 frameset으로 페이지가 구성되지 않았는지 확인하세요.\n(프레임 셋 페이지는 평가 하실수 없습니다.)");
+			var addStyle = document.createElement('link');
+			addStyle.rel = 'stylesheet';
+			addStyle.type = 'text/css';
+			addStyle.href = getScriptPath() + 'pajet.css?' + Math.random();
+			document.getElementsByTagName("head")[0].appendChild(addStyle);
+			
+			var newDiv = document.createElement("div");
+			newDiv.setAttribute("id","deuteWas");
+			if(document.getElementsByTagName("body")[0]){
+				document.getElementsByTagName("body")[0].appendChild(newDiv);
+			} else {
+				alert("이 페이지에는 body가 없습니다. 혹시 frameset으로 페이지가 구성되지 않았는지 확인하세요.\n(프레임 셋 페이지는 평가 하실수 없습니다.)");
+			}
+			setTemplate(newDiv);
 		}
-		setTemplate(newDiv);
 	}
+
+	loadScript(getScriptPath() + 'image.php?url=' + window.location.href, init);
 })();
