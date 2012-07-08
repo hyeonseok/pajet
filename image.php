@@ -7,7 +7,7 @@ foreach ($eval_data as $row) {
 	$item = explode(',', $row);
 	$url = $item[0];
 	$type = $item[1];
-	if ($type != 'img' && $url != urldecode($_REQUEST['url'])) {
+	if ($type != 'img' && $type != 'inputimg' && $url != urldecode($_REQUEST['url'])) {
 		continue;
 	}
 	$data = $item[2];
