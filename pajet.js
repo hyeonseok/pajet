@@ -767,6 +767,13 @@
 		return false;
 	}
 
+	function loadScript(scriptURL) {
+		var scriptElem = document.createElement('SCRIPT');
+		scriptElem.setAttribute('type', 'text/javaScript');
+		scriptElem.setAttribute('src', scriptURL);
+		document.body.appendChild(scriptElem);
+	}
+
 	//실행
 	loadScript(getScriptPath() + 'image.php?url=' + window.location.href);	// 처음에 pajet을 화면에 출력할 때는 서버의 데이터를 못 불러옴. pajet.js를 php로 가고 서버 데이터를 연동해야 하나...
 
