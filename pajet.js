@@ -677,9 +677,9 @@
 
 		var template = [];
 		template.push('<fieldset><span' + cls + ' onclick="updateRadioStatus(this)">');
-		template.push('<label><input type="radio" name="eval_' + type + '[' + seq + ']" value="pass"' + pass + '> 적합</label>');
-		template.push('<label><input type="radio" name="eval_' + type + '[' + seq + ']" value="fail"' + fail + '> 부적합</label>');
-		template.push('<input type="hidden" name="' + type + '[' + seq + ']" value="' + data + '">');
+		template.push('<label><input type="radio" name="result[' + type + '][' + seq + '][pass]" value="pass"' + pass + '> 적합</label>');
+		template.push('<label><input type="radio" name="result[' + type + '][' + seq + '][pass]" value="fail"' + fail + '> 부적합</label>');
+		template.push('<input type="hidden" name="result[' + type + '][' + seq + '][data]" value="' + data + '">');
 		template.push('</span></fieldset>');
 		return template.join('');
 	}

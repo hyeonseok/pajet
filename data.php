@@ -1,20 +1,22 @@
 <?php
 header('Content-Type: text/plain');
 
-$eval_data = fopen('data.csv', 'a');
-//$error = fopen('error.txt', 'a');
-$page_url = $_REQUEST['url'];
-$rules = array('img', 'inputimg', 'skipnav', 'title', 'locale', 'table', 'label');
+print_r($_REQUEST);
 
-foreach ($rules as $rule) {
-	foreach ($_REQUEST[$rule] as $key => $path) {
-		if ($_REQUEST['eval_' . $rule][$key]) {
-			$str .= $page_url . ',' . $rule. ',' . $path . ',' . $_REQUEST['eval_' . $rule][$key] . "\n";
+$eval_data = fopen('data.csv', 'a');
+
+$page_url = $_REQUEST['url'];
+
+$count = 0;
+foreach ($_REQUEST['result'] as $type => $seq) {
+	foreach ($seq as $item) {
+		if (isset($item['pass'])) {
+			$str .= $page_url . ',' . $type. ',' . $item['data'] . ',' . $item['pass'] . "\n";
+			$count += 1;
 		}
 	}
 }
 
 fwrite($eval_data, $str);
-//print_r($_REQUEST);
 ?>
-DONE.
+Saved <?php echo($count); ?> items.
