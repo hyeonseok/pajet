@@ -756,5 +756,5 @@
 		}
 	}
 
-	loadScript(getScriptPath() + 'image.php?url=' + window.location.href, init);
+	loadScript(getScriptPath() + 'image.php?url=' + encodeURIComponent(window.location.href), init);
 })();

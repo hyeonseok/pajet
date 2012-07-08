@@ -5,10 +5,15 @@ $eval_data = file('data.csv');
 
 foreach ($eval_data as $row) {
 	$item = explode(',', $row);
-	$path = $item[0];
+	if ($url == urldecode($_REQUEST['url'])) {
+		$path = $item[0];
+	} else {
+		$path = '';
+	}
 	$url = $item[1];
 	$type = $item[2];
-	if ($type != 'img' && $type != 'inputimg' && $url != urldecode($_REQUEST['url'])) {
+	//echo(urldecode($_REQUEST['url'])."\n");
+	if ($url != urldecode($_REQUEST['url'])) {
 		continue;
 	}
 	$data = $item[3];
