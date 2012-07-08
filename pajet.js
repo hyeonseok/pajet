@@ -330,18 +330,16 @@
 				}
 				var summaryStr = (el[i].getAttribute("summary")==null) ? "" : el[i].getAttribute("summary");
 				var captionStr = (el[i].getElementsByTagName("caption").length > 0) ? el[i].getElementsByTagName("caption")[0].innerHTML : "";
-				if (captionStr == '' && summaryStr == '') {
-					tableHeading = '<span class="fail">제목없는</span>';
-				} else if (captionStr == summaryStr) {
-					tableHeading = '<span class="fail">[C][S] ' + captionStr + '</span>';
+				if (captionStr == summaryStr) {
+					tableHeading = 'Caption, Summary: <span class="fail">동일: ' + captionStr + '</span>';
 				} else {
 					var resultCaptionCode;
 					var resultsummaryCode;
-					resultCaptionCode = (captionStr=="")?'<span class="fail">[C]:미정의</span>':'<span class="pass">[C]' + captionStr +'</span>';
-					resultsummaryCode = (summaryStr=="")?'<span class="fail">[S]:미정의</span>':'<span class="pass">[S]' + summaryStr +'</span>';
-					tableHeading = resultCaptionCode +", "+ resultsummaryCode;
+					resultCaptionCode = 'Caption: ' + ((captionStr == "") ? '<span class="fail">미정의</span>' : '<span class="pass">' + captionStr +'</span>');
+					resultsummaryCode = 'Summary: ' + ((summaryStr == "") ? '<span class="fail">미정의</span>' : '<span class="pass">' + summaryStr +'</span>');
+					tableHeading = resultCaptionCode + '<br>' + resultsummaryCode;
 				}
-				genList.push("<li>" + tableHeading + ' 테이블: th의 사용 ' + ((thStr == '') ? '<span class="fail">th태그가 사용되지 않았습니다</span>.' : thStr.replace(', ', '').replace(/<br>/ig,'')));
+				genList.push("<li>" + tableHeading + '<br>th: ' + ((thStr == '') ? '<span class="fail">th태그가 사용되지 않았습니다</span>.' : thStr.replace(', ', '').replace(/<br>/ig,'')));
 				genList.push(generateRadioBtn('table', i, 'table' + i));
 				genList.push("</li>");
 			}
