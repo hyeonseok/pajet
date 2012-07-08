@@ -268,6 +268,7 @@
 		}
 		return frameElList.join('');
 	}
+	/*
 	function getHnTagList()
 	{
 		var returnValue = [];
@@ -292,6 +293,7 @@
 		returnValue.push(generateRadioBtn('title', 0, 'title'));
 		return returnValue.join('');
 	}
+	*/
 	function getlocale()
 	{
 		var returnValue = [];
@@ -578,7 +580,7 @@
 		gHTML.push('<div id="section3" class="section">'+getSkipNav()+'</div>');	//241
 		gHTML.push('<div id="section4" class="section">'+getTitle()+'</div>'); //242
 		gHTML.push('<div id="section5" class="section">'+getFrameTagList()+'</div>'); //242
-		gHTML.push('<div id="section6" class="section">'+getHnTagList()+'</div>');
+		//gHTML.push('<div id="section6" class="section">'+getHnTagList()+'</div>');
 		gHTML.push('<div id="section7" class="section">'+getlocale()+'</div>'); //311
 		gHTML.push('<div id="section8" class="section">'+getTableInfo()+'</div>'); //332
 		gHTML.push('<div id="section9" class="section">'+getLabelList()+'</div>'); //341
