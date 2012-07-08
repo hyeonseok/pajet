@@ -1,5 +1,5 @@
 (function () {
-	console.log('pajet runs');
+	//console.log('pajet runs');
 	var allElForWas = document.getElementsByTagName("*");
 	var NgbUserEvent = new __NgbUserEvent();
 	var NgbBrowser = new __NgbBrowser();
@@ -152,8 +152,8 @@
 		var embedEl = document.getElementsByTagName('embed');
 		var els;
 		
-		console.log(objectEl);
-		console.log(embedEl);
+		//console.log(objectEl);
+		//console.log(embedEl);
 
 		template.push(generateRadioBtn('movie', 0, 'skipnav'));
 
