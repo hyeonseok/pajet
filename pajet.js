@@ -242,13 +242,13 @@
 		if(frameCount>0)
 		{
 			frameElList.push("<p>"+frameCount+"개의 프레임이 사용 되었습니다.</p>");
-			frameElList.push("<table class=\"frameTable\"><thead><tr><th>URL</th><th>title</th></tr></thead><tbody>");
+			frameElList.push("<table class=\"frameTable\"><thead><tr><th>URL</th><th>title</th><th>Evaluation</th></tr></thead><tbody>");
 			if(frameEl.length != 0)
 			{
 				for (var i=0; i<frameEl.length; i++)
 				{
 					frameElList.push("<tr><td>frame: <a href=\""+frameEl[i].src+"\">"+frameEl[i].src+"</a></td><td>"+frameEl[i].getAttribute("title")+"</td>");
-					//frameElList.push('<td>' + generateRadioBtn('frame', cnt++, frameEl[i].src) + '</td>');
+					frameElList.push('<td>' + generateRadioBtn('frametitle', cnt++, frameEl[i].src) + '</td>');
 					frameElList.push('</tr>');
 				}
 			}
@@ -257,7 +257,7 @@
 				for (var i=0; i<iframeEl.length; i++) 
 				{
 					frameElList.push("<tr><td>iframe: <a href=\""+iframeEl[i].src+"\">"+iframeEl[i].src+"</a></td><td>"+iframeEl[i].getAttribute("title")+"</td>");
-					//frameElList.push('<td>' + generateRadioBtn('frame', cnt++, iframeEl[i].src) + '</td>');
+					frameElList.push('<td>' + generateRadioBtn('frametitle', cnt++, iframeEl[i].src) + '</td>');
 					frameElList.push("</tr>");
 				}
 			}
