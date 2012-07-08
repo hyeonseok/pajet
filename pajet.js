@@ -36,10 +36,9 @@
 				
 				if(imgEl[i].getAttribute("usemap") && imgEl[i].getAttribute("usemap") != null)
 				{
-					returnValue.push("<h3>이미지 맵의 사용</h3>");
+					returnValue.push("<p>이미지 맵: ");
 					var mapValue = imgEl[i].getAttribute("usemap").replace("#",'');
 					var areaAlt;
-					returnValue.push("<p>");
 					for(var l=0;l<mapElCount;++l)
 					{
 						if(mapEl[l].getAttribute("name")== mapValue)
@@ -51,7 +50,7 @@
 								if (areaAlt) {
 									returnValue.push(areaAlt);
 								} else {
-									returnValue.push('no alt attribute');
+									returnValue.push('<span class="fail">no alt attribute</span>');
 								}
 								returnValue.push(", ");
 							}
@@ -624,7 +623,6 @@
 		}
 
 		//1.1.1 image preview
-/*
 		var imgs = document.getElementById('section1').getElementsByTagName('img');
 		for (var i = 0, cnt = imgs.length; i < cnt; i++) {
 			if (imgs.item(i).className == 'imageItem') {
@@ -652,7 +650,6 @@
 				}
 			}
 		}
-*/
 	}
 
 	function generateRadioBtn(type, seq, data) {
