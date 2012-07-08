@@ -36,6 +36,9 @@
 #pajetWrap ul {
     list-style: none
 }
+#pajetWrap input[type=text] {
+	border: 2px inset #ccc;
+}
 #pajetHeader {
     width: 100%;
     overflow: hidden;

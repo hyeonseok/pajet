@@ -571,6 +571,7 @@
 		gHTML.push('<div id="pajetContents">');
 
 		gHTML.push('<form action="' + getScriptPath() + 'data.php" method="post" target="pajet-result">');
+		gHTML.push('<p><label>페이지 위치: <input type="text" name="path" value="' + pagePath + '"></label></p>');
 		gHTML.push('<p><input type="hidden" name="url" value="' + window.location.href + '"></p>');
 
 		gHTML.push('<div id="section1" class="section">'+getImgTagList()+'</div>');	//1.1.1
