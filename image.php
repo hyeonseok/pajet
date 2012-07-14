@@ -13,7 +13,7 @@ foreach ($eval_data as $row) {
 	$url = $item[1];
 	$type = $item[2];
 	//echo(urldecode($_REQUEST['url'])."\n");
-	if ($url != urldecode($_REQUEST['url'])) {
+	if ($type != 'img' && $type != 'inputimg' && $url != urldecode($_REQUEST['url'])) {
 		continue;
 	}
 	$data = $item[3];
