@@ -750,6 +750,7 @@
 			if(document.getElementsByTagName("body")[0]){
 				document.getElementsByTagName("body")[0].appendChild(newDiv);
 			} else {
+				// 프레임 셋 페이지도 프레임 제목 평가 해야하는데...
 				alert("이 페이지에는 body가 없습니다. 혹시 frameset으로 페이지가 구성되지 않았는지 확인하세요.\n(프레임 셋 페이지는 평가 하실수 없습니다.)");
 			}
 			setTemplate(newDiv);
