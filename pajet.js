@@ -755,6 +755,16 @@
 			}
 			setTemplate(newDiv);
 		}
+		// check page path
+		var form = document.getElementById('pajetContents').getElementsByTagName('form')[0];
+		form.onsubmit = function () {
+			if (document.getElementsByName('path')[0].value == '') {
+				alert('페이지 위치가 입력되지 않았습니다.');
+				return false;
+			}
+			return true;
+		}
+		
 	}
 
 	loadScript(getScriptPath() + 'image.php?url=' + encodeURIComponent(window.location.href), init);
