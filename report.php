@@ -4,7 +4,13 @@ error_reporting(1);
 
 header('Content-Type: text/html; charset=utf-8');
 
-$eval_data = file('data.csv');
+if (isset($_REQUEST['data'])) {
+	$data_file = $_REQUEST['data'];
+} else {
+	$data_file = 'data.csv';
+}
+
+$eval_data = file($data_file);
 
 foreach ($eval_data as $row) {
 	$item = explode(',', $row);
@@ -83,9 +89,38 @@ $total_output = array(
 <head>
 <meta charset="UTF-8">
 <title></title>
+<style type="text/css">
+table {
+	width: 100%;
+	table-layout: fixed;
+	border: 1px solid #000;
+	border-width: 1px 1px 0 0;
+	border-collapse: collapse;
+}
+th, 
+td {
+	border: 1px solid #000;
+	border-width: 0 0 1px 1px;
+	padding: 0.5em;
+	text-align: center;
+	font-size: 0.75em;
+}
+th {
+	background-color: #ccc;
+}
+</style>
 </head>
 <body>
 <table>
+	<colgroup>
+		<col style="width: 30em;">
+		<col>
+		<col>
+		<col>
+		<col>
+		<col>
+		<col>
+	</colgroup>
 	<thead>
 		<tr>
 			<th>페이지</th>
