@@ -66,6 +66,7 @@ foreach ($result as $url => $data_by_url) {
 		'page_title' => getFormattedText($result_by_type['pagetitle']['pass'], $result_by_type['pagetitle']['fail']), 
 		'frame_title' => getFormattedText($result_by_type['frametitle']['pass'], $result_by_type['frametitle']['fail']), 
 		'human_language' => getFormattedText($result_by_type['locale']['pass'], $result_by_type['locale']['fail']), 
+		'table' => getFormattedText($result_by_type['table']['pass'], $result_by_type['table']['fail']), 
 		'label' => getFormattedText($result_by_type['label']['pass'], $result_by_type['label']['fail'])
 	);
 }
@@ -76,6 +77,7 @@ $total_output = array(
 	'page_title' => getFormattedText($total['pagetitle']['pass'], $total['pagetitle']['fail']), 
 	'frame_title' => getFormattedText($total['frametitle']['pass'], $total['frametitle']['fail']), 
 	'human_language' => getFormattedText($total['locale']['pass'], $total['locale']['fail']), 
+	'table' => getFormattedText($total['table']['pass'], $total['table']['fail']), 
 	'label' => getFormattedText($total['label']['pass'], $total['label']['fail'])
 );
 
@@ -129,6 +131,7 @@ th {
 			<th>페이지 제목</th>
 			<th>프레임 제목</th>
 			<th>사용 언어 선언</th>
+			<th>표</th>
 			<th>레이블</th>
 		</tr>
 	</thead>
@@ -140,6 +143,7 @@ th {
 			<td><?php echo($total_output['page_title']); ?></td>
 			<td><?php echo($total_output['frame_title']); ?></td>
 			<td><?php echo($total_output['human_language']); ?></td>
+			<td><?php echo($total_output['table']); ?></td>
 			<td><?php echo($total_output['label']); ?></td>
 		</tr>
 	</tfoot>
@@ -152,6 +156,7 @@ th {
 			<td><?php echo($val['page_title']); ?></td>
 			<td><?php echo($val['frame_title']); ?></td>
 			<td><?php echo($val['human_language']); ?></td>
+			<td><?php echo($val['table']); ?></td>
 			<td><?php echo($val['label']); ?></td>
 		</tr>
 <?php } ?>
