@@ -731,6 +731,29 @@
 		var scriptElem = document.createElement('SCRIPT');
 		scriptElem.setAttribute('type', 'text/javaScript');
 		scriptElem.setAttribute('src', scriptURL);
+
+		//http://stackoverflow.com/questions/774752/dynamic-script-loading-synchronization
+		var safelistener = function(){
+			try {
+				callback();
+			} catch(e) {
+				// do something with the error
+			}
+		};
+		if (scriptElem.readyState && scriptElem.onload!==null) {
+			// IE only (onload===undefined) not Opera (onload===null)
+			scriptElem.onreadystatechange = function() {
+				if ( scriptElem.readyState === "loaded" || scriptElem.readyState === "complete" ) {
+					// Avoid memory leaks (and duplicate call to callback) in IE
+					scriptElem.onreadystatechange = null;
+					safelistener();
+				}
+			};
+		} else {
+			// other browsers (DOM Level 0)
+			scriptElem.onload = safelistener;
+		}
+
 		scriptElem.onload = callback;
 		document.body.appendChild(scriptElem);
 	}
