@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(1);
+
 header('Content-Type: text/javascript');
 
 $eval_data = file('data.csv');
