@@ -100,8 +100,8 @@
 	{
 		var returnValue = [];
 		returnValue.push("<h2>1. 적절한 대체 텍스트 제공(배경사용여부)</h2>");
-		returnValue.push("<p><button onclick='toggleImageOutline()'>Toggle image outline</button></p>");
-		returnValue.push("<p><button onclick='togglebgimage()'>Turn on.off background Image</button></p>");
+		returnValue.push('<p><button type="button" onclick="toggleImageOutline()">Toggle image outline</button></p>');
+		returnValue.push('<p><button type="button" onclick="togglebgimage()">Turn on.off background Image</button></p>');
 		// TODO: 갯수를 수동으로 입력할 수 있게...
 		returnValue.push(generateRadioBtn('backgroundimage', 0, 'backgroundimage'));
 		return returnValue.join("");
