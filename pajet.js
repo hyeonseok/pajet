@@ -730,6 +730,7 @@
 	function loadScript(scriptURL, callback) {
 		var scriptElem = document.createElement('SCRIPT');
 		scriptElem.setAttribute('type', 'text/javaScript');
+		scriptElem.setAttribute('charset', 'UTF-8');
 		scriptElem.setAttribute('src', scriptURL);
 
 		//http://stackoverflow.com/questions/774752/dynamic-script-loading-synchronization

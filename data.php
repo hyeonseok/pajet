@@ -1,12 +1,23 @@
 <?php
-header('Content-Type: text/plain');
+function is_utf8 ($str) {
+	$converted = iconv('utf-8', 'utf-8', $str);
+	if ($converted == $str) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
-print_r($_REQUEST);
+header('Content-Type: text/plain');
 
 $eval_data = fopen('data.csv', 'a');
 
 $page_path = $_REQUEST['path'];
 $page_url = $_REQUEST['url'];
+
+if (!is_utf8($page_path)) {
+	$page_path = iconv('euc-kr', 'utf-8', $page_path);
+}
 
 $count = 0;
 foreach ($_REQUEST['result'] as $type => $seq) {
