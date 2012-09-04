@@ -567,26 +567,42 @@
 		gHTML.push('<p><label>페이지 위치: <input type="text" name="path" value="' + pagePath + '"></label></p>');
 		gHTML.push('<p><input type="hidden" name="url" value="' + window.location.href + '"></p>');
 
-
-		gHTML.push("<h2>1. 적절한 대체 텍스트 제공</h2>");
-		gHTML.push('<div id="section1" class="section">'+getImgTagList()+'</div>');	//1.1.1
-		gHTML.push("<h2>1. 적절한 대체 텍스트 제공(배경사용여부)</h2>");
-		gHTML.push('<div id="section2" class="section">'+checkBackgroundImg()+'</div>');	//1.1.1
-		//gHTML.push('<div id="section13" class="section">'+getMovieList()+'</div>');	//2
-		gHTML.push("<h2>12. 반복영역 건너뛰기</h2>");
-		gHTML.push('<div id="section3" class="section">'+getSkipNav()+'</div>');	//241
-		gHTML.push('<h2>13.1 제목 제공(페이지 타이틀)</h2>');
-		gHTML.push('<div id="section4" class="section">'+getTitle()+'</div>'); //242
-		gHTML.push("<h2>13.2 제목 제공(프레임제목)</h2>");
-		gHTML.push('<div id="section5" class="section">'+getFrameTagList()+'</div>'); //242
+		gHTML.push("<h2>1.1.1 적절한 대체 텍스트 제공</h2>");
+		gHTML.push('<div id="section1" class="section">'+getImgTagList()+'</div>');
+		gHTML.push("<h3>적절한 배경 이미지 사용 여부</h3>");
+		gHTML.push('<div id="section2" class="section">'+checkBackgroundImg()+'</div>');
+		//gHTML.push("<h2>1.2.1 자막 제공</h2>");
+		//gHTML.push('<div id="section13" class="section">'+getMovieList()+'</div>');
+		//gHTML.push("<h2>1.3.1 색에 무관한 콘텐츠 인식</h2>");
+		//gHTML.push("<h2>1.3.2 명확한 지시사항 제공</h2>");
+		//gHTML.push("<h2>1.3.3 텍스트 콘텐츠의 명도 대비</h2>");
+		//gHTML.push("<h2>1.3.4 배경음 사용 금지</h2>");
+		//gHTML.push("<h2>2.1.1 키보드 사용 보장</h2>");
+		//gHTML.push("<h2>2.1.2 초점 이동</h2>");
+		//gHTML.push("<h2>2.2.1 응답시간 조절</h2>");
+		//gHTML.push("<h2>2.2.2 정지 기능 제공</h2>");
+		//gHTML.push("<h2>2.3.1 깜빡임과 번쩍임 사용 제한</h2>");
+		gHTML.push("<h2>2.4.1 반복 영역 건너뛰기</h2>");
+		gHTML.push('<div id="section3" class="section">'+getSkipNav()+'</div>');
+		gHTML.push('<h2>2.4.2 제목 제공</h2>');
+		gHTML.push('<h3>페이지 제목</h3>');
+		gHTML.push('<div id="section4" class="section">'+getTitle()+'</div>');
+		gHTML.push('<h3>프레임 제목</h3>');
+		gHTML.push('<div id="section5" class="section">'+getFrameTagList()+'</div>');
+		//gHTML.push('<h3>콘텐츠 블록 제목</h3>');
 		//gHTML.push('<div id="section6" class="section">'+getHnTagList()+'</div>');
-		returnValue.push("<h2>15. 기본언어 표시</h2>");
-		gHTML.push('<div id="section7" class="section">'+getlocale()+'</div>'); //311
-		genList.push("<h2>18. 표의 구성</h2>");
-		gHTML.push('<div id="section8" class="section">'+getTableInfo()+'</div>'); //332
-		returnValue.push("<h2>19. 레이블 제공</h2>");
-		gHTML.push('<div id="section9" class="section">'+getLabelList()+'</div>'); //341
+		gHTML.push('<h2>3.1.1 기본 언어 표시</h2>');
+		gHTML.push('<div id="section7" class="section">'+getlocale()+'</div>');
+		//gHTML.push('<h2>3.2.1 사용자 요구에 따른 실행</h2>');
+		//gHTML.push('<h2>3.3.1 콘텐츠의 선형화</h2>');
+		gHTML.push("<h2>3.3.2 표의 구성</h2>");
+		gHTML.push('<div id="section8" class="section">'+getTableInfo()+'</div>');
+		gHTML.push("<h2>3.4.1 레이블 제공</h2>");
+		gHTML.push('<div id="section9" class="section">'+getLabelList()+'</div>');
 		//gHTML.push('<div id="section10" class="section">'+getFromList()+'</div>');
+		//gHTML.push("<h2>3.4.2 오류 정정</h2>");
+		//gHTML.push("<h2>4.1.1 마크업 오류 방지</h2>");
+		//gHTML.push("<h2>4.2.1 웹 애플리케이션 접근성 준수</h2>");
 		//gHTML.push('<div id="section11" class="section">'+getJsLink()+'</div>');
 		//gHTML.push('<div id="section12" class="section">'+getOnclick()+'</div>');
 
