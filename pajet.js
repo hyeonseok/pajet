@@ -12,7 +12,6 @@
 		var imgEl = document.getElementsByTagName("img");
 		var inputEl = document.getElementsByTagName("input");
 		var returnValue = [];
-		returnValue.push("<h2>1. 적절한 대체 텍스트 제공</h2>");
 	
 		if(imgEl.length != 0)
 		{
@@ -99,7 +98,6 @@
 	function checkBackgroundImg()
 	{
 		var returnValue = [];
-		returnValue.push("<h2>1. 적절한 대체 텍스트 제공(배경사용여부)</h2>");
 		returnValue.push('<p><button type="button" onclick="toggleImageOutline()">Toggle image outline</button></p>');
 		returnValue.push('<p><button type="button" onclick="togglebgimage()">Turn on.off background Image</button></p>');
 		// TODO: 갯수를 수동으로 입력할 수 있게...
@@ -170,7 +168,6 @@
 	function getSkipNav() {
 		var aEl = document.getElementsByTagName("a");
 		var returnValue = [];
-		returnValue.push("<h2>12. 반복영역 건너뛰기</h2>");
 		var hrefCount = 0;
 		if(aEl.length>0)
 		{
@@ -214,7 +211,6 @@
 	function getTitle()
 	{
 		var titleElLsit = [];
-		titleElLsit.push('<h2>13.1 제목 제공(페이지 타이틀)</h2>');
 		var elText = document.getElementsByTagName("head")[0];
 		if (elText) elText = elText.getElementsByTagName("title")[0];
 		if (elText) elText = elText.text;
@@ -238,7 +234,6 @@
 		var frameCount = frameEl.length + iframeEl.length;
 		var frameElList = [];
 		var cnt = 0;
-		frameElList.push("<h2>13.2 제목 제공(프레임제목)</h2>");
 		if(frameCount>0)
 		{
 			frameElList.push("<p>"+frameCount+"개의 프레임이 사용 되었습니다.</p>");
@@ -298,7 +293,7 @@
 	function getlocale()
 	{
 		var returnValue = [];
-		returnValue.push("<h2>15 기본언어 표시</h2><ul class=\"localeList\">");
+		returnValue.push("<ul class=\"localeList\">");
 		var htmlEL = document.getElementsByTagName("html");
 		if(htmlEL.length >0)
 		{
@@ -318,7 +313,6 @@
 	{
 		var el = document.getElementsByTagName("table");
 		var genList = [];
-		genList.push("<h2>18. 표의 구성</h2>");
 		if(el.length != 0)
 		{
 			genList.push("<ul class='tblist'>");
@@ -356,7 +350,6 @@
 	function getLabelList()
 	{
 		var returnValue = [];
-		returnValue.push("<h2>19. 레이블 제공</h2>");
 		var labelEl = document.getElementsByTagName("label");
 		var returnLabelFor = "";
 		if(labelEl.length>0)
@@ -574,15 +567,24 @@
 		gHTML.push('<p><label>페이지 위치: <input type="text" name="path" value="' + pagePath + '"></label></p>');
 		gHTML.push('<p><input type="hidden" name="url" value="' + window.location.href + '"></p>');
 
+
+		gHTML.push("<h2>1. 적절한 대체 텍스트 제공</h2>");
 		gHTML.push('<div id="section1" class="section">'+getImgTagList()+'</div>');	//1.1.1
+		gHTML.push("<h2>1. 적절한 대체 텍스트 제공(배경사용여부)</h2>");
 		gHTML.push('<div id="section2" class="section">'+checkBackgroundImg()+'</div>');	//1.1.1
 		//gHTML.push('<div id="section13" class="section">'+getMovieList()+'</div>');	//2
+		gHTML.push("<h2>12. 반복영역 건너뛰기</h2>");
 		gHTML.push('<div id="section3" class="section">'+getSkipNav()+'</div>');	//241
+		gHTML.push('<h2>13.1 제목 제공(페이지 타이틀)</h2>');
 		gHTML.push('<div id="section4" class="section">'+getTitle()+'</div>'); //242
+		gHTML.push("<h2>13.2 제목 제공(프레임제목)</h2>");
 		gHTML.push('<div id="section5" class="section">'+getFrameTagList()+'</div>'); //242
 		//gHTML.push('<div id="section6" class="section">'+getHnTagList()+'</div>');
+		returnValue.push("<h2>15. 기본언어 표시</h2>");
 		gHTML.push('<div id="section7" class="section">'+getlocale()+'</div>'); //311
+		genList.push("<h2>18. 표의 구성</h2>");
 		gHTML.push('<div id="section8" class="section">'+getTableInfo()+'</div>'); //332
+		returnValue.push("<h2>19. 레이블 제공</h2>");
 		gHTML.push('<div id="section9" class="section">'+getLabelList()+'</div>'); //341
 		//gHTML.push('<div id="section10" class="section">'+getFromList()+'</div>');
 		//gHTML.push('<div id="section11" class="section">'+getJsLink()+'</div>');
