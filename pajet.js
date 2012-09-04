@@ -577,7 +577,8 @@
 		//gHTML.push("<h2>1.3.2 명확한 지시사항 제공</h2>");
 		//gHTML.push("<h2>1.3.3 텍스트 콘텐츠의 명도 대비</h2>");
 		//gHTML.push("<h2>1.3.4 배경음 사용 금지</h2>");
-		//gHTML.push("<h2>2.1.1 키보드 사용 보장</h2>");
+		gHTML.push("<h2>2.1.1 키보드 사용 보장</h2>");
+		gHTML.push('<div class="section">' + generateRadioBtn('keyboard', 0, null) + '</div>');
 		//gHTML.push("<h2>2.1.2 초점 이동</h2>");
 		//gHTML.push("<h2>2.2.1 응답시간 조절</h2>");
 		//gHTML.push("<h2>2.2.2 정지 기능 제공</h2>");
