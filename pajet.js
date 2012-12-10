@@ -563,7 +563,7 @@
 		gHTML.push('<div id="pajetHeader"><h1>PAJET</h1><p class="closeWacs"><button id="miniPajet">_</button><button id="closePajet">close</button></p></div>');
 		gHTML.push('<div id="pajetContents">');
 
-		gHTML.push('<form action="' + getScriptPath() + 'data.php" method="post" target="pajet-result">');
+		gHTML.push('<form action="' + getScriptPath() + 'data.php" method="post" target="pajetDataResult">');
 		gHTML.push('<p><label>페이지 위치: <input type="text" name="path" value="' + pagePath + '"></label></p>');
 		gHTML.push('<p><input type="hidden" name="url" value="' + window.location.href + '"></p>');
 
@@ -607,9 +607,9 @@
 		//gHTML.push('<div id="section11" class="section">'+getJsLink()+'</div>');
 		//gHTML.push('<div id="section12" class="section">'+getOnclick()+'</div>');
 
-		gHTML.push('<p style="margin: 1em 0"><input type="submit" class="submit"></p>');
-		gHTML.push('<iframe id="pajet-result" name="pajet-result" src="' + getScriptPath() + 'data.php" style="display: none"></iframe>');
-
+		gHTML.push('<p style="margin: 1em 0"><input type="submit" class="submit">');
+		gHTML.push('<iframe id="pajetDataResult" name="pajetDataResult" src="' + getScriptPath() + 'data.php"></iframe>');
+		gHTML.push('</p>');
 		gHTML.push('</form>');
 
 		gHTML.push('</div>');
@@ -805,6 +805,7 @@
 				alert('페이지 위치가 입력되지 않았습니다.');
 				return false;
 			}
+			document.getElementById('pajetDataResult').style.display = null;
 			return true;
 		}
 		

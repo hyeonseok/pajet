@@ -231,3 +231,10 @@
     color: #fdaf17;
     text-decoration: underline;
 }
+#pajetDataResult {
+    display: none;
+    width: 50%;
+    height: 3em;
+    border: 0 none;
+    vertical-align: middle;
+}
