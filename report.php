@@ -2,27 +2,30 @@
 ini_set('display_errors', 1);
 error_reporting(1);
 
+require_once('lib/FileLog.class.php');
+
 header('Content-Type: text/html; charset=utf-8');
 
 if (isset($_REQUEST['data'])) {
 	$data_file = $_REQUEST['data'];
 } else {
-	$data_file = 'data.csv';
+	$data_file = 'data.tsv';
 }
 
-$eval_data = file($data_file);
+$data = new FileLog('data/' . $data_file, array('id', 'page_path', 'page_url', 'category', 'element', 'pass'));
+
+$eval_data = $data->load();
 
 foreach ($eval_data as $row) {
-	$item = explode(',', $row);
-	$path = $item[0];
-	$url = $item[1];
-	$type = $item[2];
-	$data = $item[3];
-	$eval = trim($item[4]);
+	$path = $row['page_path'];
+	$url = $row['page_url'];
+	$category = $row['category'];
+	$data = $row['element'];
+	$eval = $row['pass'];
 	if (strlen($eval) < 1) {
 		continue;
 	}
-	$result[$url]['result'][$type][$data] = $eval;
+	$result[$url]['result'][$category][$data] = $eval;
 	$result[$url]['path'] = $path;
 }
 
@@ -37,11 +40,11 @@ function getFormattedText($pass, $fail) {
 $result_output = array();
 foreach ($result as $url => $data_by_url) {
 	$result_by_type = array();
-	foreach ($data_by_url['result'] as $type => $item) {
-		if ($type == 'inputimg' || $type == 'backgroundimage') {
+	foreach ($data_by_url['result'] as $category => $item) {
+		if ($category == 'inputimg' || $category == 'backgroundimage') {
 			$key = 'img';
 		} else {
-			$key = $type;
+			$key = $category;
 		}
 		$pass = 0;
 		$fail = 0;
