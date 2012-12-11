@@ -700,6 +700,7 @@
 		template.push('<fieldset' + cls + '><span onclick="updateRadioStatus(this)">');
 		template.push('<label><input type="radio" name="result[' + type + '][' + seq + '][pass]" value="pass"' + pass + '> 적합</label>');
 		template.push('<label><input type="radio" name="result[' + type + '][' + seq + '][pass]" value="fail"' + fail + '> 부적합</label>');
+		template.push('<label>설명 <input type="text" name="result[' + type + '][' + seq + '][comment]"></label>');
 		template.push('<input type="hidden" name="result[' + type + '][' + seq + '][data]" value="' + data + '">');
 		template.push('</span></fieldset>');
 		return template.join('');

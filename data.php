@@ -10,7 +10,7 @@ function is_utf8 ($str) {
 
 require_once('lib/FileLog.class.php');
 
-$data = new FileLog('data/data.tsv', array('id', 'page_path', 'page_url', 'category', 'element', 'pass'));
+$data = new FileLog('data/data.tsv', array('id', 'page_path', 'page_url', 'category', 'element', 'pass', 'comment'));
 
 $page_path = $_REQUEST['path'];
 $page_url = $_REQUEST['url'];
@@ -23,7 +23,7 @@ $count = 0;
 foreach ($_REQUEST['result'] as $category => $seq) {
 	foreach ($seq as $item) {
 		if (isset($item['pass'])) {
-			$data->save(array(uniqid(), $page_path, $page_url, $category, $item['data'], $item['pass']));
+			$data->save(array(uniqid(), $page_path, $page_url, $category, $item['data'], $item['pass'], $item['comment']));
 			$count++;
 		}
 	}
