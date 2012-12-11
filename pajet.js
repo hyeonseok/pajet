@@ -676,7 +676,7 @@
 	}
 
 	function generateRadioBtn(type, seq, data) {
-		var eval = '', pass = '', fail = '', cls = '';
+		var eval = '', pass = '', fail = '', cls = '', comment = '';
 		if (window.imageEvalResult) {
 			for (var i = 0, cnt = window.imageEvalResult.length; i < cnt; i++) {
 				if (window.imageEvalResult[i].type == type && window.imageEvalResult[i].data == data) {
