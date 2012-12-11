@@ -2,20 +2,24 @@
 ini_set('display_errors', 1);
 error_reporting(1);
 
+function getFormattedText($pass, $fail) {
+	if ($pass + $fail == 0) {
+		return 'N/A';
+	} else {
+		return $pass . '/' . ($pass + $fail) . ' (' . round(($pass / ($pass + $fail)) * 1000) / 10 . '%)';
+	}
+}
+
 require_once('lib/FileLog.class.php');
-
-header('Content-Type: text/html; charset=utf-8');
-
 if (isset($_REQUEST['data'])) {
 	$data_file = $_REQUEST['data'];
 } else {
 	$data_file = 'data.tsv';
 }
-
-$data = new FileLog('data/' . $data_file, array('id', 'page_path', 'page_url', 'category', 'element', 'pass'));
-
+$data = new FileLog('data/' . $data_file, array('id', 'page_path', 'page_url', 'category', 'element', 'pass', 'comment'));
 $eval_data = $data->load();
 
+$fail_item = array();
 foreach ($eval_data as $row) {
 	$path = $row['page_path'];
 	$url = $row['page_url'];
@@ -25,17 +29,17 @@ foreach ($eval_data as $row) {
 	if (strlen($eval) < 1) {
 		continue;
 	}
+	$comment = $row['comment'];
+
 	$result[$url]['result'][$category][$data] = $eval;
 	$result[$url]['path'] = $path;
-}
 
-function getFormattedText($pass, $fail) {
-	if ($pass + $fail == 0) {
-		return 'N/A';
-	} else {
-		return $pass . '/' . ($pass + $fail) . ' (' . round(($pass / ($pass + $fail)) * 1000) / 10 . '%)';
+	if ($eval == 'fail') {
+		$fail_item[$category][] = array('page_path' => $path, 'page_url' => $url, 'element' => $data, 'comment' => $comment);
 	}
 }
+
+print_r($fail_item); exit();
 
 $result_output = array();
 foreach ($result as $url => $data_by_url) {
@@ -84,6 +88,7 @@ $total_output = array(
 	'label' => getFormattedText($total['label']['pass'], $total['label']['fail'])
 );
 
+header('Content-Type: text/html; charset=utf-8');
 // header('Content-Type: text/plain; charset=utf-8');
 // print_r($result_output);
 // print_r($total_output);
