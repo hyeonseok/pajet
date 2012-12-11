@@ -35,11 +35,9 @@ foreach ($eval_data as $row) {
 	$result[$url]['path'] = $path;
 
 	if ($eval == 'fail') {
-		$fail_item[$category][] = array('page_path' => $path, 'page_url' => $url, 'element' => $data, 'comment' => $comment);
+		$fail_item[$category][$path][] = array('page_url' => $url, 'element' => $data, 'comment' => $comment);
 	}
 }
-
-print_r($fail_item); exit();
 
 $result_output = array();
 foreach ($result as $url => $data_by_url) {
@@ -100,6 +98,17 @@ header('Content-Type: text/html; charset=utf-8');
 <meta charset="UTF-8">
 <title></title>
 <style type="text/css">
+body {
+	font-size: 75%;
+}
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+	font-size: 1.2em;
+}
 table {
 	width: 100%;
 	table-layout: fixed;
@@ -113,7 +122,6 @@ td {
 	border-width: 0 0 1px 1px;
 	padding: 0.5em;
 	text-align: center;
-	font-size: 0.75em;
 }
 th {
 	background-color: #ccc;
@@ -121,6 +129,8 @@ th {
 </style>
 </head>
 <body>
+<h1>이름</h1>
+<h2>요약표</h2>
 <table>
 	<colgroup>
 		<col style="width: 30em;">
@@ -170,5 +180,18 @@ th {
 <?php } ?>
 	</tbody>
 </table>
+<h2>오류 내용</h2>
+<?php
+foreach ($fail_item as $category => $page) {
+	echo('<h3>' . $category . '</h3>');
+	foreach ($page as $path => $items) {
+		echo('<h4>' . $path . '</h4>');
+		foreach ($items as $item) {
+			echo('<p>' . $item['element'] . ': ' . $item['comment'] . '</p>');
+		}
+		echo('<p>' . $item['element'] . ': ' . $item['comment'] . '</p>');
+	}
+}
+?>
 </body>
 </html>
