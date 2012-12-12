@@ -35,7 +35,7 @@ foreach ($eval_data as $row) {
 	$result[$url]['path'] = $path;
 
 	if ($eval == 'fail') {
-		$fail_item[$category][$path][] = array('page_url' => $url, 'element' => $data, 'comment' => $comment);
+		$fail_item[$category][$path][$data] = array('page_url' => $url, 'comment' => $comment);
 	}
 }
 
@@ -186,10 +186,9 @@ foreach ($fail_item as $category => $page) {
 	echo('<h3>' . $category . '</h3>');
 	foreach ($page as $path => $items) {
 		echo('<h4>' . $path . '</h4>');
-		foreach ($items as $item) {
-			echo('<p>' . $item['element'] . ': ' . $item['comment'] . '</p>');
+		foreach ($items as $element => $item) {
+			echo('<p>' . $element . ': ' . $item['comment'] . '</p>');
 		}
-		echo('<p>' . $item['element'] . ': ' . $item['comment'] . '</p>');
 	}
 }
 ?>
