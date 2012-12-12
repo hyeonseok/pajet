@@ -15,9 +15,9 @@ $data = new FileLog('data/data.tsv', array('id', 'page_path', 'page_url', 'categ
 $page_path = $_REQUEST['path'];
 $page_url = $_REQUEST['url'];
 
-if (!is_utf8($page_path)) {
-	$page_path = iconv('euc-kr', 'utf-8', $page_path);
-}
+// if (!is_utf8($page_path)) {
+// 	$page_path = iconv('euc-kr', 'utf-8', $page_path);
+// }
 
 $count = 0;
 foreach ($_REQUEST['result'] as $category => $seq) {
