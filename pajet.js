@@ -807,7 +807,7 @@
 				alert('페이지 위치가 입력되지 않았습니다.');
 				return false;
 			}
-			document.getElementById('pajetDataResult').style.display = null;
+			document.getElementById('pajetDataResult').style.display = 'inline';
 			return true;
 		}
 		
