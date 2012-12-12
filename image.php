@@ -9,12 +9,12 @@ $data = new FileLog('data/data.tsv', array('id', 'page_path', 'page_url', 'categ
 $eval_data = $data->load();
 
 foreach ($eval_data as $row) {
+	$url = $row['page_url'];
 	if ($url == urldecode($_REQUEST['url'])) {
 		$path = $row['page_path'];
 	} else {
 		$path = '';
 	}
-	$url = $row['page_url'];
 	$type = $row['category'];
 	if ($type != 'img' && $type != 'inputimg' && $url != urldecode($_REQUEST['url'])) {
 		continue;
