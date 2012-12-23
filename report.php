@@ -67,6 +67,7 @@ foreach ($result as $url => $data_by_url) {
 		'path' => $data_by_url['path'], 
 		'url' => $url, 
 		'alt_text' => getFormattedText($result_by_type['img']['pass'], $result_by_type['img']['fail']), 
+		'keyboard' => getFormattedText($result_by_type['keyboard']['pass'], $result_by_type['keyboard']['fail']), 
 		'skip_navigation' => getFormattedText($result_by_type['skipnav']['pass'], $result_by_type['skipnav']['fail']), 
 		'page_title' => getFormattedText($result_by_type['pagetitle']['pass'], $result_by_type['pagetitle']['fail']), 
 		'frame_title' => getFormattedText($result_by_type['frametitle']['pass'], $result_by_type['frametitle']['fail']), 
@@ -78,6 +79,7 @@ foreach ($result as $url => $data_by_url) {
 
 $total_output = array(
 	'alt_text' => getFormattedText($total['img']['pass'], $total['img']['fail']), 
+	'keyboard' => getFormattedText($total['keyboard']['pass'], $total['keyboard']['fail']), 
 	'skip_navigation' => getFormattedText($total['skipnav']['pass'], $total['skipnav']['fail']), 
 	'page_title' => getFormattedText($total['pagetitle']['pass'], $total['pagetitle']['fail']), 
 	'frame_title' => getFormattedText($total['frametitle']['pass'], $total['frametitle']['fail']), 
@@ -145,6 +147,7 @@ th {
 		<tr>
 			<th>페이지</th>
 			<th>대체 텍스트</th>
+			<th>키보드</th>
 			<th>스킵 네비게이션</th>
 			<th>페이지 제목</th>
 			<th>프레임 제목</th>
@@ -157,6 +160,7 @@ th {
 		<tr>
 			<th>합계</th>
 			<td><?php echo($total_output['alt_text']); ?></td>
+			<td><?php echo($total_output['keyboard']); ?></td>
 			<td><?php echo($total_output['skip_navigation']); ?></td>
 			<td><?php echo($total_output['page_title']); ?></td>
 			<td><?php echo($total_output['frame_title']); ?></td>
@@ -170,6 +174,7 @@ th {
 		<tr>
 			<th><a href="<?php echo($val['url']); ?>"><?php echo($val['path']); ?></a></th>
 			<td><?php echo($val['alt_text']); ?></td>
+			<td><?php echo($val['keyboard']); ?></td>
 			<td><?php echo($val['skip_navigation']); ?></td>
 			<td><?php echo($val['page_title']); ?></td>
 			<td><?php echo($val['frame_title']); ?></td>
