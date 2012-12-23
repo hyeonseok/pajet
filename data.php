@@ -23,7 +23,7 @@ $count = 0;
 foreach ($_REQUEST['result'] as $category => $seq) {
 	foreach ($seq as $item) {
 		if (isset($item['pass'])) {
-			$data->save(array(uniqid(), $page_path, $page_url, $category, $item['data'], $item['pass'], $item['comment']));
+			$data->save(array(uniqid(), $page_path, $page_url, $category, $item['data'], $item['pass'], stripcslashes($item['comment'])));
 			$count++;
 		}
 	}
