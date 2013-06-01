@@ -133,7 +133,7 @@ th {
 </head>
 <body>
 <h1>이름</h1>
-<h2>요약표</h2>
+<h2>검토 요약</h2>
 <table>
 	<colgroup>
 		<col style="width: 30em;">
@@ -186,7 +186,7 @@ th {
 <?php } ?>
 	</tbody>
 </table>
-<h2>오류 내용</h2>
+<h2>상세 내용</h2>
 <?php
 foreach ($fail_item as $category => $page) {
 	echo('<h3>' . $category . '</h3>');
