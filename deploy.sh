@@ -1,1 +1,1 @@
-rsync -avz -e ssh --exclude=.DS_Store --exclude=.git* --exclude=*.csv --exclude=data/* --exclude=*.sh --delete ./ accessibility@accessibility.kr:www/pajet/
+rsync -avz -e ssh --exclude=.DS_Store --exclude=*.csv --exclude=data/* --delete ./www/ playground@pajet.net:pajet_html/
