@@ -1,0 +1,37 @@
+body {
+	margin: 0 0 2em;
+	font: 100%/1.6 monospace;
+	color: #111;
+}
+
+.post {
+
+}
+
+.storycontent {
+	margin: 0 auto;
+	max-width: 38em;
+}
+
+.post h1 {
+	margin: 0 0 1em;
+	padding: 2em 0;
+	font-size: 3em;
+	font-weight: normal;
+	text-align: center;
+	background: #fc0;
+}
+
+.post h2 {
+	font-weight: normal;
+	border-bottom: 2px solid #fc0;
+}
+
+#bookmarklet {
+	display: inline-block;
+	background-color: #fc0;
+	padding: 0.6em 1em;
+	border: 1px solid #ffa200;
+	color: #000;
+	border-radius: 0.3em;
+}
