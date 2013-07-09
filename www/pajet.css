@@ -1,0 +1,273 @@
+body {
+	height:100%
+}
+#pajetWrap
+{
+	position:fixed!important;
+	bottom:0!important;
+	right:0!important;
+	z-index:100000;
+	width:500px;
+	background-color:#FFF;
+	font:11px/1.2 "Malgun Gothic", Dotum, Tahoma, sans-serif;
+	text-align:left !important;
+	border:2px solid #fdaf17;
+}
+
+#pajetWrap *
+{
+	color:#333;
+	visibility:visible;
+	position:static;
+	width:auto;
+	height:auto;
+	overflow:visible;
+	line-height:1.6;
+	background:none;
+	padding:0;
+	margin:0;
+}
+
+
+#pajetWrap ul
+{
+	list-style:none;
+}
+
+#pajetHeader
+{
+	width:100%;
+	overflow:hidden;
+	zoom:1;
+	background-color:#fdaf17;
+}
+
+#pajetHeader h1
+{
+	display: block;
+	float:left;
+	color:#48401b;
+	font-weight:700;
+	font-size:16px;
+	margin:0;
+	padding:7px 0 6px 10px;
+}
+
+#pajetContents
+{
+	clear:both;
+	height:500px;
+	overflow:auto;
+	padding:10px 10px 0;
+}
+
+#pajetContents a
+{
+	color:blue;
+	text-decoration:underline;
+}
+
+#pajetContents h2
+{
+	display: block !important;
+	border-top:1px solid #b69a59;
+	border-left:1px solid #b69a59;
+	color:#3f0021;
+	font-weight:700;
+	font-size:1.2em;
+	margin:10px 0;
+	padding:5px 3px 3px 7px;
+}
+
+#pajetContents h3
+{
+	color:#694900;
+	border-bottom:1px solid #b69a59;
+	font-weight:400;
+	font-size:1.2em;
+	margin:10px 3px;
+	padding:0 3px 5px;
+}
+
+#pajetContents ul li
+{
+	font-size:12px;
+	margin:0 0 5px;
+}
+
+#pajetFooter
+{
+	height:2em;
+	line-height:2em;
+	padding-top:5px;
+	background-color:#fdaf17;
+	position:relative;
+}
+
+#pajetFooter a
+{
+	color:#48401b;
+}
+
+#pajetFooter .btnTop
+{
+	position:absolute;
+	top:3px;
+	right:5px;
+}
+
+#pajetFooter .btnTop a
+{
+	display:block;
+	background-color:#FFF;
+	border:1px solid #ccc;
+	color:#000;
+	padding:4px 7px 0;
+}
+
+#pajetContents .sum
+{
+	border:2px solid #EFEFEF;
+}
+
+#pajetWrap li,#pajetWrap p
+{
+	padding:0 7px;
+}
+
+#pajetWrap #header
+{
+	height:2em;
+	line-height:2em;
+	border-bottom:1px solid #AFAFAF;
+	background-color:#666;
+}
+
+#pajetWrap .imageItem
+{
+	cursor:pointer;
+}
+
+#pajetWrap ul.tblist li
+{
+	padding:.2em 0;
+}
+
+#pajetWrap ul.linkList li
+{
+	padding:.3em 0;
+}
+
+#pajetWrap #imageList img
+{
+	max-width:99%;
+	max-height:3em;
+	vertical-align:middle;
+	font-size:inherit;
+}
+
+#deuteWasImg
+{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:200000;
+	text-align:center;
+	color:#333;
+	padding:10px;
+}
+
+#deuteWasImg img
+{
+	dispaly:block;
+	margin-bottom:7px;
+	max-width:600px;
+	max-height:400px;
+}
+
+#pajetWrap .frameTable
+{
+	border-collapse:collapse;
+}
+
+#pajetWrap .frameTable th,#pajetWrap .frameTable td
+{
+	color:#333;
+	border:1px solid #AFAFAF;
+	padding:5px 7px;
+}
+
+#pajetWrap .frameTable th
+{
+	font-weight:700;
+}
+
+#pajetWrap .closeWacs
+{
+	float:right;
+	width:100px;
+	height:20px;
+	padding-right:10px;
+}
+
+#pajetWrap .pass
+{
+	color:green;
+}
+
+#pajetWrap .warning
+{
+	color:#ff6600;
+}
+
+#pajetWrap p button
+{
+	background-color:transparent;
+}
+
+#pajetContents .section
+{
+	padding-top:5px;
+}
+
+#checkList
+{
+	margin-bottom:20px;
+	border:1px solid #b69a59;
+	padding:10px 5px 5px;
+}
+
+#checkList li
+{
+	margin-bottom:3px;
+	line-height:1.5;
+}
+
+#checkList li a
+{
+	color:#000;
+	font-size:12px!important;
+	text-decoration:none;
+}
+
+#checkList li a:hover
+{
+	color:#fdaf17;
+	text-decoration:underline;
+}
+
+#pajetContents .sum p,#pajetWrap .fail
+{
+	color:red;
+	font-weight: bold;
+}
+#pajetWrap button
+{
+	padding:0 10px !important;
+	border:1px solid #CEAE8E !important;
+	background-color:#E5D2C0 !important;
+	font-weight:bold !important;
+	color:#000 !important;
+	display:inline-block !important;
+	text-indent: 0 !important
+}
