@@ -41,7 +41,7 @@
 					<ol>
 						<li>
 							<p>다음의 링크를 오른쪽 클릭하시고 즐겨찾기(연결)에 추가를 하시면 됩니다.</p>
-							<p><a id="bookmarklet" href="javascript:function%20loadScript(scriptURL){var%20scriptElem=document.createElement('SCRIPT');scriptElem.setAttribute('type','text/javaScript');scriptElem.setAttribute('charset','UTF-8');scriptElem.setAttribute('src',scriptURL);document.body.appendChild(scriptElem);}loadScript('http://pajet.net/pajet.js');">PAJET 실행</a></p>
+							<p><a id="bookmarklet" href="javascript:function%20loadScript(scriptURL){var%20scriptElem=document.createElement('SCRIPT');scriptElem.setAttribute('type','text/javaScript');scriptElem.setAttribute('charset','UTF-8');scriptElem.setAttribute('src',scriptURL);document.body.appendChild(scriptElem);}loadScript('//<?php echo($_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']); ?>pajet.js');">PAJET 실행</a></p>
 						</li>
 						<li>툴을 실행하고자 하는 페이지로 이동하여 즐겨찾기(연결)에 있는 "PAJET 실행" 링크를 클릭하여 활성화합니다.</li>
 					</ol>
