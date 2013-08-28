@@ -54,6 +54,7 @@
 </div>
 <!-- <script src="pajet.js" type="text/javascript"></script> -->
 
+<script type="text/javascript" src="https://hyeonseok.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e/en_US-gcr0wr-1988229788/6139/22/1.4.0-m6/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=62be1734"></script>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
