@@ -263,7 +263,7 @@ function getLinkCount()
 	var aEl = document.getElementsByTagName("a");
 	var aElC = aEl.length;
 	var hasHrefA = 0;
-	for (var i=0;i<aElC.length;++i)
+	for (var i=0;i<aElC;++i)
 	{
 		if(aEl[i].href != null)
 		{++hasHrefA}
@@ -273,7 +273,7 @@ function getLinkCount()
 	var areaEl = document.getElementsByTagName("area");
 	var areaElC = areaEl.length;
 	var hasHrefArea = 0;
-	for (var j=0;j<areaElC.length;++j)
+	for (var j=0;j<areaElC;++j)
 	{
 		if(areaEl[j].href != null)
 		{++hasHrefArea}
